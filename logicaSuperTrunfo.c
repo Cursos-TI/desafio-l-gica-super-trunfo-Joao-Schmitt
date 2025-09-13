@@ -1,43 +1,77 @@
 #include <stdio.h>
-
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+#include <string.h>
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    char estadoA[20], estadoB[20];
+    char codigoA[10], codigoB[10];
+    char cidadeA[30], cidadeB[30];
+    int populacaoA, populacaoB;
+    float areaA, areaB;
+    float pibA, pibB;
+    int pontosTuristicosA, pontosTuristicosB;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    printf("Cadastro da Carta A\n");
+    printf("Digite o estado: ");
+    scanf("%s", estadoA);
+    printf("Digite o código da carta: ");
+    scanf("%s", codigoA);
+    printf("Digite o nome da cidade: ");
+    scanf("%s", cidadeA);
+    printf("Digite a população: ");
+    scanf("%d", &populacaoA);
+    printf("Digite a área (km²): ");
+    scanf("%f", &areaA);
+    printf("Digite o PIB (em bilhões): ");
+    scanf("%f", &pibA);
+    printf("Digite o número de pontos turísticos: ");
+    scanf("%d", &pontosTuristicosA);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    printf("\nCadastro da Carta B\n");
+    printf("Digite o estado: ");
+    scanf("%s", estadoB);
+    printf("Digite o código da carta: ");
+    scanf("%s", codigoB);
+    printf("Digite o nome da cidade: ");
+    scanf("%s", cidadeB);
+    printf("Digite a população: ");
+    scanf("%d", &populacaoB);
+    printf("Digite a área (km²): ");
+    scanf("%f", &areaB);
+    printf("Digite o PIB (em bilhões): ");
+    scanf("%f", &pibB);
+    printf("Digite o número de pontos turísticos: ");
+    scanf("%d", &pontosTuristicosB);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    printf("\n- Carta A -\n");
+    printf("Estado: %s | Código: %s | Cidade: %s\n", estadoA, codigoA, cidadeA);
+    printf("População: %d | Área: %.2f km² | PIB: %.2f bi | Pontos turísticos: %d\n",
+           populacaoA, areaA, pibA, pontosTuristicosA);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("\n- Carta B -\n");
+    printf("Estado: %s | Código: %s | Cidade: %s\n", estadoB, codigoB, cidadeB);
+    printf("População: %d | Área: %.2f km² | PIB: %.2f bi | Pontos turísticos: %d\n",
+           populacaoB, areaB, pibB, pontosTuristicosB);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    printf("\nComparação: População\n");
+    if (populacaoA > populacaoB) {
+        printf("Cidade vencedora: %s (maior população)\n", cidadeA);
+    } else if (populacaoB > populacaoA) {
+        printf("Cidade vencedora: %s (maior população)\n", cidadeB);
+    } else {
+        printf("Empate! Ambas têm a mesma população.\n");
+    }
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    printf("\nComparação: Densidade Populacional\n");
+    float densidadeA = populacaoA / areaA;
+    float densidadeB = populacaoB / areaB;
+
+    if (densidadeA < densidadeB) {
+        printf("Cidade vencedora: %s (menor densidade populacional)\n", cidadeA);
+    } else if (densidadeB < densidadeA) {
+        printf("Cidade vencedora: %s (menor densidade populacional)\n", cidadeB);
+    } else {
+        printf("Empate! Ambas têm a mesma densidade.\n");
+    }
 
     return 0;
 }
